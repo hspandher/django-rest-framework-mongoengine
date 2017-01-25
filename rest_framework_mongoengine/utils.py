@@ -7,7 +7,11 @@ from mongoengine.queryset import QuerySet
 from mongoengine.errors import ValidationError
 import mongoengine
 
-from rest_framework.compat import OrderedDict
+try:
+    from rest_framework.compat import OrderedDict
+except ImportError:
+    from collections import OrderedDict
+
 from rest_framework.utils import field_mapping
 import inspect
 
